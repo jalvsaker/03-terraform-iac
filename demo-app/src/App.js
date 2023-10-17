@@ -7,6 +7,7 @@ function App() {
   
   return (
     <div className="App">
+      <h1>Hei verden</h1>
       <button onClick={() => setHei(hei+1)}>{hei}</button>
     </div>
   );
