@@ -87,5 +87,7 @@ jobs:
         working-directory: ./demo-app
       - run: npm run build
         working-directory: ./demo-app
-      - run: aws s3 cp build s3://jeal004-s3 --recursive --region eu-west-1
+      - name: copy to s3
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: aws s3 cp build s3://jeal004-s3 --recursive --region eu-west-1
         working-directory: ./demo-app 
