@@ -89,5 +89,5 @@ jobs:
         working-directory: ./demo-app
       - name: copy to s3
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: aws s3 sync build s3://jeal004-s3 --recursive --region eu-west-1
+        run: aws s3 sync build s3://jeal004-s3 --delete --region eu-west-1
         working-directory: ./demo-app 
