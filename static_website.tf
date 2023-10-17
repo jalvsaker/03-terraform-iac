@@ -82,15 +82,11 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
   "Id": "Policy",
   "Statement": [
     {
-      "Action": [
-        "s3:GetObject"
-      ],
+      "Action": "s3:GetObject",
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::${aws_s3_bucket.my-static-website.bucket}/*",
       "Principal": {
-        "AWS": [
-          "*"
-        ]
+        "AWS": "*"
       }
     }
   ]
